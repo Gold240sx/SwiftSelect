@@ -121,6 +121,7 @@ SwiftSelect supports multiple icon types for options. Use the following table to
 | **SF Symbol** | `icon:` parameter with `Image(systemName:)` | `.init("Settings", value: "settings", icon: Image(systemName: "gearshape.fill"))` |
 | **Web Image** | `iconURL:` parameter | `.init("Logo", value: "logo", iconURL: "https://example.com/logo.png")` |
 | **SVG from Web** | `iconURL:` parameter (SVG URL) | `.init("Icon", value: "icon", iconURL: "https://example.com/icon.svg")` |
+| **Description** | `description:` parameter (works with any icon type) | `.init("Premium Plan", value: "premium", emoji: "⭐", description: "Get access to all features")` |
 
 ### Icon Examples
 
@@ -140,8 +141,10 @@ let options: [SelectOption] = [
     // SVG from web (automatically handled via SDWebImageSVGCoder)
     .init("Brand Icon", value: "brand", iconURL: "https://example.com/brand-icon.svg"),
     
-    // Option with description
+    // Options with description (works with any icon type)
     .init("Premium Plan", value: "premium", emoji: "⭐", description: "Get access to all features"),
+    .init("Basic Plan", value: "basic", icon: Image(systemName: "star.fill"), description: "Essential features only"),
+    .init("Enterprise", value: "enterprise", iconURL: "https://example.com/enterprise.svg", description: "Custom solutions for large teams"),
 ]
 ```
 
